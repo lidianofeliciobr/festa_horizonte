@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Transporte Evento</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<div class="container">
+
+  <!-- LOGO -->
+ 
+
+  <!-- INFORMAÇÕES DO TRANSPORTE -->
+  <div class="info-transporte">
+    <p><strong>Saída:</strong> Praça do Hospital</p>
+    <p><strong>Horário:</strong> 19h30</p>
+    <p><strong>Data:</strong> 07/03</p>
+    <p><strong>CONFIRMAR e ENVIAR COMPROVANTE do seu valor no <a href="wa.me/5585981767868">WhatsApp</a></strong> </p>
+    
+  </div>
+
+  <!-- PIX -->
+  <div class="pix-box">
+    <div class="pix-card">
+      <span class="pix-label">Chave Pix</span>
+
+      <div class="pix-row">
+        <span class="pix-key" id="pixKey">85981724191</span>
+        <button class="pix-copy-btn" onclick="copiarPix()">Copiar</button>
+      </div>
+
+      <small class="pix-owner">
+        Lidiano Felício • PicPay
+      </small>
+
+      <span id="pixMsg" class="pix-msg"></span>
+    </div>
+  </div>
+
+  <!-- TÍTULO -->
+  <h1>Transporte - Evento</h1>
+
+  <!-- FORM -->
+  <div id="formArea">
+    <p class="instrucao">Coloque seu nome para entrar na lista 👇</p>
+    <input type="text" id="nome" placeholder="Digite seu nome aqui">
+    <button onclick="adicionarNome()">Entrar na lista</button>
+  </div>
+
+  <!-- LISTA -->
+  <ol id="lista"></ol>
+
+  <!-- MENSAGEM -->
+  <p id="msgAtualizacao" class="msg-atualizacao"></p>
+
+  <p class="explicacao">
+   lISTA ATUALIZADA</p>
+    <p>( Vaga confirmada mediante a metade do valor pago).
+  </p>
+
+  <!-- ADMIN -->
+  <button class="admin-btn" onclick="abrirAdmin()">Área Administrativa</button>
+
+</div>
+
+<!-- MODAL ADMIN -->
+<div id="adminModal" class="modal">
+  <div class="modal-content">
+    <h2>Área Administrativa</h2>
+    <input type="password" id="senhaAdmin" placeholder="Digite a senha">
+    <button onclick="verificarSenha()">Entrar</button>
+
+    <div id="adminArea" style="display:none;">
+      <p>Clique em um nome para remover</p>
+      <ul id="adminLista"></ul>
+    </div>
+
+    <button onclick="fecharAdmin()">Fechar</button>
+  </div>
+</div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
