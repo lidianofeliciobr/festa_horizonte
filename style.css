@@ -9,16 +9,15 @@ html, body {
   font-family: Arial, sans-serif;
 }
 
-/* ===== BODY CENTRALIZADO E FUNDO FIXO ===== */
+/* ===== BODY CENTRALIZADO ===== */
 
 body {
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* 🔥 começa do topo */
+  align-items: center; /* 🔥 Mantém centralizado como antes */
   min-height: 100vh;
 
-  padding: 40px 20px; /* mais espaço em cima */
-
+  padding: 20px;
   color: #333;
   text-align: center;
 
@@ -29,10 +28,10 @@ body {
   background-attachment: fixed; /* 🔥 FUNDO FIXO */
 }
 
-/* ===== CONTAINER ===== */
+/* ===== CONTAINER MAIOR ===== */
 
 .container {
-  background: rgba(226, 226, 226, 0.95);
+  background: rgb(226, 226, 226);
 
   width: 95%;
   max-width: 850px;
@@ -41,6 +40,13 @@ body {
 
   border-radius: 20px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+/* ===== LOGO ===== */
+
+.logo {
+  width: 140px;
+  margin-bottom: 15px;
 }
 
 /* ===== INFO ===== */
@@ -169,6 +175,7 @@ ol {
 
 ol li {
   margin-bottom: 8px;
+  font-weight: bold; /* 🔥 nomes em negrito */
 }
 
 /* ===== MENSAGEM CONFIRMAÇÃO ===== */
@@ -183,10 +190,17 @@ ol li {
 
 /* ===== TEXTO LISTA ===== */
 
+.msg-atualizacao {
+  font-weight: bold;
+  color: green;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
 .explicacao {
   font-size: 14px;
   color: #555;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 /* ===== BOTÃO ADMIN ===== */
@@ -201,7 +215,10 @@ ol li {
 .modal {
   display: none;
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0,0,0,0.5);
 
   justify-content: center;
@@ -216,16 +233,33 @@ ol li {
   border-radius: 12px;
 }
 
+/* ===== HEADER ÔNIBUS ===== */
+
+.bus-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: -60px;
+  z-index: 2;
+}
+
+.bus-header img {
+  width: 600px;
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 18px 30px rgba(0,0,0,0.45));
+}
+
 /* ===== MOBILE ===== */
 
 @media (max-width: 480px) {
 
-  body {
+  .container {
     padding: 20px;
   }
 
-  .container {
-    padding: 20px;
+  .bus-header img {
+    width: 320px;
   }
 
   .pix-card {
