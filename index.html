@@ -27,35 +27,30 @@
   <div class="pix-box">
     <div class="pix-card">
       <span class="pix-label">Chave Pix</span>
-
       <div class="pix-row">
         <span class="pix-key" id="pixKey">85981724191</span>
         <button class="pix-copy-btn" onclick="copiarPix()">Copiar</button>
       </div>
-
       <small class="pix-owner">
         Lidiano Felício • PicPay
       </small>
-
       <span id="pixMsg" class="pix-msg"></span>
     </div>
   </div>
 
   <h1>Transporte - Evento</h1>
 
-  <div id="formArea">
-    <p class="instrucao">Coloque seu nome para entrar na lista 👇</p>
-    <input type="text" id="nome" placeholder="Digite seu nome aqui">
-    <button onclick="adicionarNome()">Entrar na lista</button>
-  </div>
+  <p class="instrucao">Coloque seu nome para entrar na lista 👇</p>
+  <input type="text" id="nome" placeholder="Digite seu nome aqui">
+  <button onclick="adicionarNome()">Entrar na lista</button>
 
-  <!-- 🔥 TÍTULO DA LISTA PRIMEIRO -->
+  <p id="msgConfirmacao" class="msg-confirmacao"></p>
+
   <p class="explicacao-titulo"><strong>LISTA ATUALIZADA</strong></p>
   <p class="explicacao">
     (Vaga confirmada mediante a metade do valor pago).
   </p>
 
-  <!-- 🔥 LISTA ABAIXO -->
   <ol id="lista"></ol>
 
   <button class="admin-btn" onclick="abrirAdmin()">Área Administrativa</button>
@@ -66,8 +61,11 @@
 <div id="adminModal" class="modal">
   <div class="modal-content">
     <h2>Área Administrativa</h2>
-    <input type="password" id="senhaAdmin" placeholder="Digite a senha">
-    <button onclick="verificarSenha()">Entrar</button>
+
+    <div id="loginAdmin">
+      <input type="password" id="senhaAdmin" placeholder="Digite a senha">
+      <button onclick="verificarSenha()">Entrar</button>
+    </div>
 
     <div id="adminArea" style="display:none;">
       <p>Clique em um nome para confirmar ou remover</p>
