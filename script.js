@@ -1,3 +1,4 @@
+// 🔥 COLE AQUI SUA URL DO GOOGLE SCRIPT
 const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbzmElnW1a2UN1tnEQ8XFr-MG2Em10qNeTbI6rpEZcpOqvueOODs2ViYC6Ugv1LXwINr/exec";
 
 const SENHA_ADMIN = "072026";
@@ -15,7 +16,6 @@ async function carregarLista() {
     const confirmado = item[1];
 
     const li = document.createElement("li");
-
     li.textContent = `${index + 1}° - ${nome}`;
 
     if (confirmado === "SIM") {
@@ -41,23 +41,17 @@ async function adicionarNome() {
     return;
   }
 
-  const response = await fetch(URL_SCRIPT, {
+  await fetch(URL_SCRIPT, {
     method: "POST",
     body: new URLSearchParams({ nome })
   });
 
-  const result = await response.text();
-
-  if (result === "EXISTE") {
-    alert("Esse nome já está na lista!");
-  } else {
-    nomeInput.value = "";
-    carregarLista();
-  }
+  nomeInput.value = "";
+  carregarLista();
 }
 
 function abrirAdmin() {
-  document.getElementById("adminModal").style.display = "block";
+  document.getElementById("adminModal").style.display = "flex";
 }
 
 function fecharAdmin() {
@@ -111,5 +105,30 @@ async function remover(index) {
 
   carregarLista();
 }
+
+function copiarPix() {
+  const chave = document.getElementById("pixKey").textContent;
+
+  navigator.clipboard.writeText(chave)
+    .then(() => {
+      const msg = document.getElementById("pixMsg");
+      msg.textContent = "Chave copiada!";
+      setTimeout(() => {
+        msg.textContent = "";
+      }, 2000);
+    })
+    .catch(() => {
+      alert("Erro ao copiar!");
+    });
+}
+
+// Garante que os botões funcionem no GitHub
+window.adicionarNome = adicionarNome;
+window.abrirAdmin = abrirAdmin;
+window.fecharAdmin = fecharAdmin;
+window.verificarSenha = verificarSenha;
+window.confirmar = confirmar;
+window.remover = remover;
+window.copiarPix = copiarPix;
 
 carregarLista();
