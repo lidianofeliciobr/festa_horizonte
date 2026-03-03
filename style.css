@@ -1,4 +1,3 @@
-/* RESET */
 * {
   box-sizing: border-box;
 }
@@ -9,15 +8,14 @@ html, body {
   font-family: Arial, sans-serif;
 }
 
-/* ===== BODY CENTRALIZADO ===== */
-
 body {
   display: flex;
   justify-content: center;
-  align-items: center; /* 🔥 Mantém centralizado como antes */
+  align-items: flex-start;
+  padding-top: 40px;
   min-height: 100vh;
-
-  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   color: #333;
   text-align: center;
 
@@ -25,31 +23,21 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* 🔥 FUNDO FIXO */
+  background-attachment: fixed;
 }
-
-/* ===== CONTAINER MAIOR ===== */
 
 .container {
-  background: rgb(226, 226, 226);
-
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
   width: 95%;
   max-width: 850px;
-
   padding: clamp(20px, 4vw, 40px);
-
   border-radius: 20px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+
+  max-height: 90vh;
+  overflow-y: auto;
 }
-
-/* ===== LOGO ===== */
-
-.logo {
-  width: 140px;
-  margin-bottom: 15px;
-}
-
-/* ===== INFO ===== */
 
 .info-transporte p {
   margin: 6px 0;
@@ -57,11 +45,10 @@ body {
   font-size: 18px;
 }
 
-/* ===== PIX ===== */
-
 .pix-box {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin: 15px 0;
 }
 
@@ -129,9 +116,8 @@ body {
   margin-top: 4px;
   color: #eafff5;
   text-align: center;
+  display: none;
 }
-
-/* ===== FORM ===== */
 
 .instrucao {
   font-size: 18px;
@@ -165,8 +151,6 @@ button:hover {
   opacity: 0.9;
 }
 
-/* ===== LISTA ===== */
-
 ol {
   text-align: left;
   margin-top: 25px;
@@ -175,10 +159,8 @@ ol {
 
 ol li {
   margin-bottom: 8px;
-  font-weight: bold; /* 🔥 nomes em negrito */
+  font-weight: bold;
 }
-
-/* ===== MENSAGEM CONFIRMAÇÃO ===== */
 
 .msg-confirmacao {
   margin-top: 15px;
@@ -188,29 +170,16 @@ ol li {
   display: none;
 }
 
-/* ===== TEXTO LISTA ===== */
-
-.msg-atualizacao {
-  font-weight: bold;
-  color: green;
-  margin-top: 15px;
-  font-size: 16px;
-}
-
 .explicacao {
   font-size: 14px;
   color: #555;
   margin-top: 20px;
 }
 
-/* ===== BOTÃO ADMIN ===== */
-
 .admin-btn {
   margin-top: 25px;
   background: #e74a3b;
 }
-
-/* ===== MODAL ===== */
 
 .modal {
   display: none;
@@ -220,7 +189,6 @@ ol li {
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.5);
-
   justify-content: center;
   align-items: center;
 }
@@ -231,38 +199,4 @@ ol li {
   width: 90%;
   max-width: 400px;
   border-radius: 12px;
-}
-
-/* ===== HEADER ÔNIBUS ===== */
-
-.bus-header {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: -60px;
-  z-index: 2;
-}
-
-.bus-header img {
-  width: 600px;
-  max-width: 100%;
-  height: auto;
-  filter: drop-shadow(0 18px 30px rgba(0,0,0,0.45));
-}
-
-/* ===== MOBILE ===== */
-
-@media (max-width: 480px) {
-
-  .container {
-    padding: 20px;
-  }
-
-  .bus-header img {
-    width: 320px;
-  }
-
-  .pix-card {
-    width: 100%;
-  }
 }
