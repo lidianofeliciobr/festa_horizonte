@@ -133,3 +133,4 @@ window.copiarPix = copiarPix;
 
 carregarLista();
 
+
