@@ -2,78 +2,44 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Transporte Evento</title>
+  <title>Lista Transporte</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
 
-  <div class="info-transporte">
-    <p><strong>Saída:</strong> Praça do Hospital</p>
-    <p><strong>Horário:</strong> 19h30</p>
-    <p><strong>Data:</strong> 07/03</p>
-    <p>
-      <strong>
-        CONFIRMAR e ENVIAR COMPROVANTE no 
-        <a href="https://wa.me/message/IXRS7Q3FP7VQH1" target="_blank">
-          WhatsApp
-        </a>
-      </strong>
-    </p>
-  </div>
+  <h2>GARANTA SUA VAGA</h2>
 
-  <!-- PIX -->
-  <div class="pix-box">
-    <div class="pix-card">
-      <span class="pix-label">Chave Pix</span>
-      <div class="pix-row">
-        <span class="pix-key" id="pixKey">85981724191</span>
-        <button class="pix-copy-btn" onclick="copiarPix()">Copiar</button>
-      </div>
-      <small class="pix-owner">
-        Lidiano Felício • PicPay
-      </small>
-      <span id="pixMsg" class="pix-msg"></span>
-    </div>
-  </div>
+  <!-- INPUT PRIMEIRO -->
+  <p class="instrucao">Digite seu nome para entrar na lista:</p>
 
-  <h1>Transporte - Evento</h1>
-
-  <p class="instrucao">Coloque seu nome para entrar na lista 👇</p>
-  <input type="text" id="nome" placeholder="Digite seu nome aqui">
+  <input type="text" id="nome" placeholder="Digite seu nome">
   <button onclick="adicionarNome()">Entrar na lista</button>
 
   <p id="msgConfirmacao" class="msg-confirmacao"></p>
 
-  <p class="explicacao-titulo"><strong>LISTA ATUALIZADA</strong></p>
-  <p class="explicacao">
-    (Vaga confirmada mediante a metade do valor pago).
-  </p>
+  <!-- PIX DEPOIS -->
+  <div class="pix-box">
+    <div class="pix-card">
+      <span class="pix-label">CHAVE PIX</span>
+
+      <div class="pix-row">
+        <span class="pix-key" id="pixKey">11999999999</span>
+        <button class="pix-copy-btn" onclick="copiarPix()">Copiar</button>
+      </div>
+
+      <span class="pix-owner">Nome do Responsável</span>
+      <p class="pix-msg" id="pixMsg"></p>
+    </div>
+  </div>
+
+  <!-- LISTA POR ÚLTIMO -->
+  <p class="msg-atualizacao">LISTA ATUALIZADA</p>
+  <p class="explicacao">Vaga confirmada mediante metade do valor pago.</p>
 
   <ol id="lista"></ol>
 
-  <button class="admin-btn" onclick="abrirAdmin()">Área Administrativa</button>
-
-</div>
-
-<!-- MODAL ADMIN -->
-<div id="adminModal" class="modal">
-  <div class="modal-content">
-    <h2>Área Administrativa</h2>
-
-    <div id="loginAdmin">
-      <input type="password" id="senhaAdmin" placeholder="Digite a senha">
-      <button onclick="verificarSenha()">Entrar</button>
-    </div>
-
-    <div id="adminArea" style="display:none;">
-      <p>Clique em um nome para confirmar ou remover</p>
-      <ul id="adminLista"></ul>
-    </div>
-
-    <button onclick="fecharAdmin()">Fechar</button>
-  </div>
 </div>
 
 <script src="script.js"></script>
