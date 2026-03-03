@@ -1,143 +1,37 @@
-/* RESET */
 * {
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-
-/* ===== BODY CENTRALIZADO ===== */
-
 body {
   display: flex;
   justify-content: center;
-  align-items: center; /* 🔥 Mantém centralizado como antes */
+  align-items: center;
   min-height: 100vh;
-
   padding: 20px;
-  color: #333;
+  margin: 0;
+  font-family: Arial, sans-serif;
   text-align: center;
 
   background-image: url("./IMG_5885.PNG");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* 🔥 FUNDO FIXO */
+  background-attachment: fixed;
 }
-
-/* ===== CONTAINER MAIOR ===== */
 
 .container {
   background: rgb(226, 226, 226);
-
   width: 95%;
   max-width: 850px;
-
-  padding: clamp(20px, 4vw, 40px);
-
+  padding: 40px;
   border-radius: 20px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.25);
 }
 
-/* ===== LOGO ===== */
-
-.logo {
-  width: 140px;
-  margin-bottom: 15px;
-}
-
-/* ===== INFO ===== */
-
-.info-transporte p {
-  margin: 6px 0;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-/* ===== PIX ===== */
-
-.pix-box {
-  display: flex;
-  justify-content: center;
-  margin: 15px 0;
-}
-
-.pix-card {
-  background: linear-gradient(135deg, #1cc88a, #17a673);
-  border-radius: 12px;
-  padding: 12px 18px;
-  width: 280px;
-  color: #fff;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.18);
-}
-
-.pix-label {
-  font-size: 11px;
-  font-weight: 600;
-  opacity: 0.9;
-  margin-bottom: 5px;
-  display: block;
-  text-align: center;
-}
-
-.pix-row {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-right: 35px;
-}
-
-.pix-key {
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  width: 100%;
-}
-
-.pix-copy-btn {
-  position: absolute;
-  right: 5px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 10px;
-  padding: 4px 8px;
-  background: rgba(255,255,255,0.25);
-  border: none;
-  color: #fff;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.pix-copy-btn:hover {
-  background: rgba(255,255,255,0.4);
-}
-
-.pix-owner {
-  display: block;
-  font-size: 11px;
-  opacity: 0.85;
-  margin-top: 5px;
-  text-align: center;
-}
-
-.pix-msg {
-  font-size: 11px;
-  margin-top: 4px;
-  color: #eafff5;
-  text-align: center;
-}
-
-/* ===== FORM ===== */
-
 .instrucao {
   font-size: 18px;
-  margin-bottom: 15px;
-  color: #4e73df;
   font-weight: bold;
+  color: #4e73df;
 }
 
 input {
@@ -165,104 +59,78 @@ button:hover {
   opacity: 0.9;
 }
 
-/* ===== LISTA ===== */
-
-ol {
-  text-align: left;
-  margin-top: 25px;
-  font-size: 16px;
-}
-
-ol li {
-  margin-bottom: 8px;
-  font-weight: bold; /* 🔥 nomes em negrito */
-}
-
-/* ===== MENSAGEM CONFIRMAÇÃO ===== */
+/* CONFIRMADO GRANDE */
 
 .msg-confirmacao {
   margin-top: 15px;
-  font-size: 22px;
+  font-size: 26px;
   font-weight: bold;
   color: #28a745;
   display: none;
 }
 
-/* ===== TEXTO LISTA ===== */
+/* PIX */
+
+.pix-box {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0;
+}
+
+.pix-card {
+  background: linear-gradient(135deg, #1cc88a, #17a673);
+  border-radius: 12px;
+  padding: 15px;
+  width: 280px;
+  color: #fff;
+}
+
+.pix-label {
+  font-size: 12px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.pix-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pix-copy-btn {
+  padding: 5px 10px;
+  font-size: 12px;
+  background: rgba(255,255,255,0.3);
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pix-msg {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+/* LISTA */
 
 .msg-atualizacao {
   font-weight: bold;
   color: green;
-  margin-top: 15px;
-  font-size: 16px;
+  margin-top: 20px;
 }
 
 .explicacao {
   font-size: 14px;
   color: #555;
+}
+
+ol {
+  text-align: left;
   margin-top: 20px;
 }
 
-/* ===== BOTÃO ADMIN ===== */
-
-.admin-btn {
-  margin-top: 25px;
-  background: #e74a3b;
-}
-
-/* ===== MODAL ===== */
-
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background: white;
-  padding: 25px;
-  width: 90%;
-  max-width: 400px;
-  border-radius: 12px;
-}
-
-/* ===== HEADER ÔNIBUS ===== */
-
-.bus-header {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: -60px;
-  z-index: 2;
-}
-
-.bus-header img {
-  width: 600px;
-  max-width: 100%;
-  height: auto;
-  filter: drop-shadow(0 18px 30px rgba(0,0,0,0.45));
-}
-
-/* ===== MOBILE ===== */
-
-@media (max-width: 480px) {
-
-  .container {
-    padding: 20px;
-  }
-
-  .bus-header img {
-    width: 320px;
-  }
-
-  .pix-card {
-    width: 100%;
-  }
+ol li {
+  font-weight: bold;
+  margin-bottom: 6px;
 }
