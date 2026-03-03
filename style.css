@@ -12,11 +12,8 @@ html, body {
 /* ===== BODY CENTRALIZADO ===== */
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-
+  margin: 0;
+  font-family: Arial, sans-serif;
   padding: 20px;
   color: #333;
   text-align: center;
@@ -25,6 +22,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* ===== CONTAINER MAIOR ===== */
@@ -243,4 +241,5 @@ ol {
   .pix-card {
     width: 100%;
   }
+
 }
