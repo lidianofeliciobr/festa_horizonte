@@ -1,5 +1,4 @@
-// 🔥 COLE AQUI SUA URL DO GOOGLE SCRIPT
-const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbzmElnW1a2UN1tnEQ8XFr-MG2Em10qNeTbI6rpEZcpOqvueOODs2ViYC6Ugv1LXwINr/exec";
+const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbzmElnW1a2UN1tnEQ8XFr-MG2Em10qNeTbI6rpEZcpOqvueOODs2ViYC6Ugv1LXwINr/execT";
 
 const SENHA_ADMIN = "072026";
 
@@ -11,17 +10,16 @@ async function carregarLista() {
 
   lista.innerHTML = "";
 
-  data.forEach((item, index) => {
+  data.forEach((item) => {
     const nome = item[0];
     const confirmado = item[1];
 
     const li = document.createElement("li");
-    li.textContent = `${index + 1}° - ${nome}`;
+    li.innerHTML = `<strong>${nome}</strong>`;
 
     if (confirmado === "SIM") {
-      li.textContent += " ✅";
+      li.innerHTML += " ✅ Confirmado";
       li.style.background = "#d4edda";
-      li.style.fontWeight = "bold";
       li.style.padding = "5px";
       li.style.borderRadius = "5px";
     }
@@ -41,12 +39,13 @@ async function adicionarNome() {
     return;
   }
 
+  nomeInput.value = "";
+
   await fetch(URL_SCRIPT, {
     method: "POST",
     body: new URLSearchParams({ nome })
   });
 
-  nomeInput.value = "";
   carregarLista();
 }
 
@@ -79,7 +78,7 @@ function atualizarAdminLista(data) {
     const li = document.createElement("li");
 
     li.innerHTML = `
-      ${nome} ${confirmado === "SIM" ? "✅" : ""}
+      <strong>${nome}</strong> ${confirmado === "SIM" ? "✅" : ""}
       <button onclick="confirmar(${index})">Confirmar</button>
       <button onclick="remover(${index})">Remover</button>
     `;
@@ -94,6 +93,7 @@ async function confirmar(index) {
     body: new URLSearchParams({ acao: "confirmar", linha: index + 2 })
   });
 
+  alert("✅ Nome confirmado!");
   carregarLista();
 }
 
@@ -103,6 +103,7 @@ async function remover(index) {
     body: new URLSearchParams({ acao: "remover", linha: index + 2 })
   });
 
+  alert("❌ Nome removido!");
   carregarLista();
 }
 
@@ -122,7 +123,6 @@ function copiarPix() {
     });
 }
 
-// Garante que os botões funcionem no GitHub
 window.adicionarNome = adicionarNome;
 window.abrirAdmin = abrirAdmin;
 window.fecharAdmin = fecharAdmin;
