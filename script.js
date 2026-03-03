@@ -45,11 +45,25 @@ async function adicionarNome() {
   });
 
   const msg = document.getElementById("msgConfirmacao");
-  msg.textContent = "✅ CONFIRMADO!";
+  msg.textContent = "Confirmado";
   msg.style.display = "block";
   setTimeout(() => msg.style.display = "none", 3000);
 
   carregarLista();
+}
+
+function copiarPix() {
+  const chave = document.getElementById("pixKey").textContent;
+  const msg = document.getElementById("pixMsg");
+
+  navigator.clipboard.writeText(chave);
+
+  msg.textContent = "Chave Pix copiada";
+  msg.style.display = "block";
+
+  setTimeout(() => {
+    msg.style.display = "none";
+  }, 3000);
 }
 
 function abrirAdmin() {
@@ -106,11 +120,6 @@ async function remover(index) {
     body: new URLSearchParams({ acao: "remover", linha: index + 2 })
   });
   carregarLista();
-}
-
-function copiarPix() {
-  const chave = document.getElementById("pixKey").textContent;
-  navigator.clipboard.writeText(chave);
 }
 
 window.adicionarNome = adicionarNome;
